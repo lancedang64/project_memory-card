@@ -1,22 +1,13 @@
-# Delet this line after changing title name, live preview URL and introduction
-# Project name [Live preview](https://lancedang64.github.io/project_name/)
+# Project Memory Card Game [Live preview](https://lancedang64.github.io/project_memory-card/)
 
 ## Introduction
-Hi, in this project I built a 
+
+Hi, in this project I built a Memory Card game using React.
+Game rules:
+
+- the player is presented with a number of cards which have pictures and name.
+- Every time the player click on a card they have never clicked before, they gain 1 score point.
+- If they pick the card that have been chosen before, it is game over and the game restart.
+- Try to get the max score!
 
 ## Knowledge and skills learnt and used
-- npm package manager
-  - webpack module bundler
-
-- Javascript
-  - DOM manipulation
-  - Using modules, import, export
-  - Event handlers
-
-- CSS
-  - Styling
-  - CSS Flex and positioning elements
-  - Keyframes animation
-  
-- Problem Solving
-  - Design and plan logic
