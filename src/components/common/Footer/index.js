@@ -24,7 +24,7 @@ const LinkStyled = styled.a`
 	margin-left: 20px;
 `;
 
-export default function Footer() {
+function Footer() {
 	return (
 		<FooterStyled>
 			<span>Made by Lance Dang</span>
@@ -32,3 +32,5 @@ export default function Footer() {
 		</FooterStyled>
 	);
 }
+
+export default Footer;
