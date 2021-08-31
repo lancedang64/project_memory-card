@@ -4,10 +4,13 @@
     "outDir": "dist",
     "module": "esnext",
     "target": "es2018",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "rootDir": "src",
     "noImplicitReturns": true,
@@ -15,11 +18,19 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "baseUrl": ".",
-    "paths": {
-      "src/*": ["./src/*"],
-      "*": ["node_modules/*"]
-    }
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
-  "include": ["src/**/*"],
-  "types": ["typePatches"]
+  "include": [
+    "src/**/*"
+  ],
+  "types": [
+    "typePatches"
+  ]
 }
