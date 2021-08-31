@@ -1,4 +1,5 @@
 import { addCard, getShuffledArr, removeCard } from '.';
+import { describe, it, expect } from 'jest';
 
 const stubArr = [
   { name: 'test_1', b: 1 },
