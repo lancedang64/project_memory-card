@@ -10,7 +10,6 @@ export function isCardCorrect(cardName: string, leftOver: TypeCard[]): boolean {
 export function getDifficulty(round: number, maxRounds: number): TypeDifficulty {
   const easy = Math.floor(maxRounds / 3);
   const medium = maxRounds - easy;
-  if (round === 1) return 'first';
   if (round <= easy) return 'easy';
   if (round <= medium) return 'medium';
   return 'hard';
@@ -19,14 +18,12 @@ export function getDifficulty(round: number, maxRounds: number): TypeDifficulty 
 // return hard coded score value depending on difficulty
 export function getScore(difficulty: TypeDifficulty): number {
   switch (difficulty) {
-    case 'first':
-      return 100;
     case 'easy':
       return 100;
     case 'medium':
       return 200;
     case 'hard':
-      return 400;
+      return 500;
     default:
       throw Error('Oops! Something went wrong with getScore()');
   }

@@ -28,7 +28,7 @@ export function removeCard(card: TypeCard, arr: TypeCard[]): TypeCard[] {
 }
 
 export function getRandomCards(arr: TypeCard[], noCards: number): TypeCard[] {
-  if (noCards > arr.length) throw Error('number of cards taken exceed array length');
+  if (noCards > arr.length) throw Error(`number of cards taken (${noCards}) exceed array length (${arr.length})`);
   const poolArr = [...arr];
   const resultArr = [];
   let randomIndex;
@@ -44,15 +44,15 @@ export function getRandomCards(arr: TypeCard[], noCards: number): TypeCard[] {
 // return a Card array with 5 random cards from leftOver and Chosen card, ratio depends on difficulty
 // easy: 4 - 1, medium: 3 - 2, hard: 1 - 4
 export function getPlayCards(difficulty: TypeDifficulty, leftOver: TypeCard[], chosen: TypeCard[]): TypeCard[] {
+  if (chosen.length === 0) return [...getRandomCards(leftOver, 5)]; // first round
+  if (leftOver.length === 0) return [...getRandomCards(chosen, 10)]; // last round
   switch (difficulty) {
-    case 'first':
-      return [...getRandomCards(leftOver, 5)];
     case 'easy':
       return [...getRandomCards(leftOver, 4), ...getRandomCards(chosen, 1)];
     case 'medium':
       return [...getRandomCards(leftOver, 3), ...getRandomCards(chosen, 2)];
     case 'hard':
-      return [...getRandomCards(leftOver, 1), ...getRandomCards(chosen, 4)];
+      return [...getRandomCards(leftOver, 1), ...getRandomCards(chosen, 9)];
     default:
       throw Error('Oops, something went wrong in getPlayCards()!');
   }

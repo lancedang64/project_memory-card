@@ -15,6 +15,11 @@ const stubArr2: TypeCard[] = [
   { name: 'test_III', imgSrc: 'stub_2' },
   { name: 'test_IV', imgSrc: 'stub_2' },
   { name: 'test_V', imgSrc: 'stub_2' },
+  { name: 'test_VI', imgSrc: 'stub_2' },
+  { name: 'test_VII', imgSrc: 'stub_2' },
+  { name: 'test_VIII', imgSrc: 'stub_2' },
+  { name: 'test_IX', imgSrc: 'stub_2' },
+  { name: 'test_X', imgSrc: 'stub_2' },
 ];
 
 const stubEmptyArr: TypeCard[] = [];
@@ -31,7 +36,7 @@ describe('getShuffledArr()', () => {
   });
   it('creats 2 different array', () => {
     const arr1 = getShuffledArr(stubArr);
-    const arr2 = getShuffledArr(stubArr2);
+    const arr2 = getShuffledArr(stubArr);
     expect(arr1).not.toEqual(arr2);
   });
 });
@@ -94,7 +99,7 @@ describe('getPlayCards()', () => {
     expect(getPlayCards('easy', stubArr, stubArr2).length).toBe(5);
   });
   it('works with first round', () => {
-    const first = getPlayCards('first', stubArr, stubEmptyArr);
+    const first = getPlayCards('easy', stubArr, stubEmptyArr);
     expect(first.filter((card) => card.imgSrc === 'stub_1').length).toBe(5);
   });
   it('works with easy ratio (4 - 1)', () => {
@@ -107,9 +112,14 @@ describe('getPlayCards()', () => {
     expect(medium.filter((card) => card.imgSrc === 'stub_1').length).toBe(3);
     expect(medium.filter((card) => card.imgSrc === 'stub_2').length).toBe(2);
   });
-  it('works with hard ratio (1 - 4)', () => {
+  it('works with hard ratio (1 - 9)', () => {
     const hard = getPlayCards('hard', stubArr, stubArr2);
     expect(hard.filter((card) => card.imgSrc === 'stub_1').length).toBe(1);
-    expect(hard.filter((card) => card.imgSrc === 'stub_2').length).toBe(4);
+    expect(hard.filter((card) => card.imgSrc === 'stub_2').length).toBe(9);
+  });
+  it('works on the last round where 0 card will be left over', () => {
+    expect(() => {
+      getPlayCards('hard', stubEmptyArr, stubArr2);
+    }).not.toThrowError();
   });
 });

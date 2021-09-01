@@ -29,9 +29,6 @@ describe('isCardCorrect()', () => {
 });
 
 describe('getDifficulty()', () => {
-  it('returns correct first round', () => {
-    expect(getDifficulty(1, 12)).toBe('first');
-  });
   it('returns correct easy level (first 1/3 max)', () => {
     expect(getDifficulty(4, 12)).toBe('easy');
   });
@@ -49,14 +46,13 @@ describe('getDifficulty()', () => {
 });
 
 describe('getScore()', () => {
-  it('returns correct first/easy score (100 points)', () => {
+  it('returns correct easy score (100 points)', () => {
     expect(getScore('easy')).toBe(100);
-    expect(getScore('first')).toBe(100);
   });
   it('returns correct medium score (200 points)', () => {
     expect(getScore('medium')).toBe(200);
   });
-  it('returns correct hard score (400 points)', () => {
-    expect(getScore('hard')).toBe(400);
+  it('returns correct hard score (500 points)', () => {
+    expect(getScore('hard')).toBe(500);
   });
 });
