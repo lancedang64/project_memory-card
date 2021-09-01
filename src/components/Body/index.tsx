@@ -5,7 +5,8 @@ import { getDifficulty, getScore, isCardCorrect } from 'src/lib/functions/game-l
 import { CardEvent, TypeCard, TypeDifficulty } from 'src/lib/types';
 import styled from 'styled-components';
 import Card from './components/Card';
-import { initialCards } from './resource';
+import GameOverModal from './components/GameOverModal';
+import { initialCards } from './initialCards';
 
 const Container = styled.section`
   background-color: AliceBlue;
@@ -29,7 +30,7 @@ const CardsContainer = styled.section`
   padding: 0% 15%;
 `;
 
-const maxRounds = initialCards.length;
+const maxRounds = initialCards.length + 1;
 const firstRoundCards = getPlayCards('easy', initialCards, []);
 
 function Body(): ReactElement {
@@ -38,12 +39,18 @@ function Body(): ReactElement {
   const [playCards, setPlayCards] = useState(firstRoundCards);
   const [round, setRound] = useState(1);
   const [difficulty, setDifficulty] = useState<TypeDifficulty>('easy');
+  const [isGameOver, setIsGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [isMaxScore, setIsMaxScore] = useState(false);
 
   useEffect(() => {
     setDifficulty(getDifficulty(round, maxRounds));
+    if (round === maxRounds) {
+      setHighScore(score);
+      setIsMaxScore(true);
+      setIsGameOver(true);
+    }
   }, [round]);
 
   useEffect(() => {
@@ -51,13 +58,13 @@ function Body(): ReactElement {
     setPlayCards(getShuffledArr(nextRoundCards));
   }, [round, difficulty]);
 
+  useEffect(() => {
+    if (score > highScore) setHighScore(score);
+  }, [isGameOver]);
+
   const handleCardClick = (event: CardEvent): void => {
     const cardName = event.target.id;
     return isCardCorrect(cardName, leftOverCards) ? nextRound(cardName) : gameOver();
-  };
-
-  const gameOver = (): void => {
-    console.log('Game Over');
   };
 
   const nextRound = (cardName: string): void => {
@@ -69,6 +76,19 @@ function Body(): ReactElement {
     setRound((prevRound) => prevRound + 1);
   };
 
+  const gameOver = (): void => {
+    // setIsGameOver(true);
+  };
+
+  const handleNewGame = (): void => {
+    setScore(0);
+    setRound(0);
+    setLeftOverCards(initialCards);
+    setChosenCards([]);
+    setIsGameOver(false);
+    setPlayCards(firstRoundCards);
+  };
+
   return (
     <Container>
       <TopPanel>
@@ -78,12 +98,27 @@ function Body(): ReactElement {
           <span>Score: {score} </span>
           <span>Highscore: {highScore} </span>
           <span>Difficulty: {difficulty}</span>
+          <div>
+            {leftOverCards.map((card) => (
+              <span key={card.name}>{card.name} </span>
+            ))}
+          </div>
         </ScoreBoard>
       </TopPanel>
       <CardsContainer>
         {playCards.map((card) => (
-          <Card handleClick={handleCardClick} key={card.name} name={card.name} imgSrc={card.imgSrc} />
+          <Card
+            handleClick={isGameOver ? null : handleCardClick}
+            key={card.name}
+            name={card.name}
+            imgSrc={card.imgSrc}
+          />
         ))}
+        {isGameOver && (
+          <GameOverModal correct={chosenCards.length} leftOver={leftOverCards.length} isMaxScore={isMaxScore}>
+            <button onClick={handleNewGame}>New Game!</button>
+          </GameOverModal>
+        )}
       </CardsContainer>
     </Container>
   );

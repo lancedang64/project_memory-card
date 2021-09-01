@@ -4,6 +4,7 @@ import { TypeCardComponent } from 'src/lib/types';
 import styled from 'styled-components';
 
 const Container = styled.span`
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
