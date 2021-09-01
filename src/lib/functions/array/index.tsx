@@ -1,4 +1,4 @@
-import { Card } from 'src/lib/types';
+import { Card, Difficulty } from 'src/lib/types';
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 export function getShuffledArr(arr: Card[]): Card[] {
@@ -43,11 +43,7 @@ export function getRandomCards(arr: Card[], noCards: number): Card[] {
 
 // return a Card array with 5 random cards from leftOver and Chosen card, ratio depends on difficulty
 // easy: 4 - 1, medium: 3 - 2, hard: 1 - 4
-export function getPlayCards(
-  difficulty: 'first' | 'easy' | 'medium' | 'hard',
-  leftOver: Card[],
-  chosen: Card[],
-): Card[] {
+export function getPlayCards(difficulty: Difficulty, leftOver: Card[], chosen: Card[]): Card[] {
   switch (difficulty) {
     case 'first':
       return [...getRandomCards(leftOver, 5)];

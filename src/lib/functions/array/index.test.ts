@@ -28,7 +28,11 @@ describe('getShuffledArr()', () => {
   it('works with array of objects', () => {
     const newArr = getShuffledArr(stubArr);
     expect(newArr).not.toEqual(stubArr);
-    console.log('new array after being shuffled', newArr);
+  });
+  it('creats 2 different array', () => {
+    const arr1 = getShuffledArr(stubArr);
+    const arr2 = getShuffledArr(stubArr2);
+    expect(arr1).not.toEqual(arr2);
   });
 });
 
