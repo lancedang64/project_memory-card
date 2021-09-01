@@ -1,22 +1,23 @@
+import { TypeCard } from 'src/lib/types';
 import { getDifficulty, getScore, isCardCorrect } from '.';
 
-const stubArr: Card[] = [
-  { name: 'test_1', imgUrl: 'stub_1' },
-  { name: 'test_2', imgUrl: 'stub_1' },
-  { name: 'test_3', imgUrl: 'stub_1' },
-  { name: 'test_4', imgUrl: 'stub_1' },
-  { name: 'test_5', imgUrl: 'stub_1' },
+const stubArr: TypeCard[] = [
+  { name: 'test_1', imgSrc: 'stub_1' },
+  { name: 'test_2', imgSrc: 'stub_1' },
+  { name: 'test_3', imgSrc: 'stub_1' },
+  { name: 'test_4', imgSrc: 'stub_1' },
+  { name: 'test_5', imgSrc: 'stub_1' },
 ];
 
-const stubArr2: Card[] = [
-  { name: 'test_I', imgUrl: 'stub_2' },
-  { name: 'test_II', imgUrl: 'stub_2' },
-  { name: 'test_III', imgUrl: 'stub_2' },
-  { name: 'test_IV', imgUrl: 'stub_2' },
-  { name: 'test_V', imgUrl: 'stub_2' },
-];
+// const stubArr2: TypeCard[] = [
+//   { name: 'test_I', imgSrc: 'stub_2' },
+//   { name: 'test_II', imgSrc: 'stub_2' },
+//   { name: 'test_III', imgSrc: 'stub_2' },
+//   { name: 'test_IV', imgSrc: 'stub_2' },
+//   { name: 'test_V', imgSrc: 'stub_2' },
+// ];
 
-const stubEmptyArr: Card[] = [];
+// const stubEmptyArr: TypeCard[] = [];
 
 describe('isCardCorrect()', () => {
   it('returns true for correct value', () => {

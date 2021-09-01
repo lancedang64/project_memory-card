@@ -8,3 +8,9 @@ export interface TypeCardComponent extends TypeCard {
 }
 
 export type TypeDifficulty = 'first' | 'easy' | 'medium' | 'hard';
+
+export interface CardEvent extends React.MouseEventHandler<HTMLImageElement> {
+  target: {
+    id: string;
+  };
+}

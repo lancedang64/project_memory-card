@@ -21,7 +21,7 @@ const stubEmptyArr: TypeCard[] = [];
 
 const stubCard = {
   name: 'Toshinori_Yagi',
-  imgUrl: 'https://myheroacademia.fandom.com/wiki/Toshinori_Yagi',
+  imgSrc: 'https://myheroacademia.fandom.com/wiki/Toshinori_Yagi',
 };
 
 describe('getShuffledArr()', () => {
@@ -51,19 +51,19 @@ describe('addCard()', () => {
 describe('removeCard()', () => {
   it('works', () => {
     expect(removeCard({ name: 'test_3', imgSrc: '3' }, stubArr)).toEqual([
-      { name: 'test_1', imgUrl: 'stub_1' },
-      { name: 'test_2', imgUrl: 'stub_1' },
-      { name: 'test_4', imgUrl: 'stub_1' },
-      { name: 'test_5', imgUrl: 'stub_1' },
+      { name: 'test_1', imgSrc: 'stub_1' },
+      { name: 'test_2', imgSrc: 'stub_1' },
+      { name: 'test_4', imgSrc: 'stub_1' },
+      { name: 'test_5', imgSrc: 'stub_1' },
     ]);
   });
   it('does not crash if no item found', () => {
     expect(removeCard({ name: 'test_99', imgSrc: '99' }, stubArr)).toEqual([
-      { name: 'test_1', imgUrl: 'stub_1' },
-      { name: 'test_2', imgUrl: 'stub_1' },
-      { name: 'test_3', imgUrl: 'stub_1' },
-      { name: 'test_4', imgUrl: 'stub_1' },
-      { name: 'test_5', imgUrl: 'stub_1' },
+      { name: 'test_1', imgSrc: 'stub_1' },
+      { name: 'test_2', imgSrc: 'stub_1' },
+      { name: 'test_3', imgSrc: 'stub_1' },
+      { name: 'test_4', imgSrc: 'stub_1' },
+      { name: 'test_5', imgSrc: 'stub_1' },
     ]);
   });
 });
