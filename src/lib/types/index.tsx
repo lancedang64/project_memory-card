@@ -3,4 +3,8 @@ export interface TypeCard {
   imgSrc: string;
 }
 
+export interface TypeCardComponent extends TypeCard {
+  handleClick: any;
+}
+
 export type TypeDifficulty = 'first' | 'easy' | 'medium' | 'hard';
