@@ -1,6 +1,6 @@
-export interface Card {
+export interface TypeCard {
   name: string;
-  imgUrl: string;
+  imgSrc: string;
 }
 
-export type Difficulty = 'first' | 'easy' | 'medium' | 'hard';
+export type TypeDifficulty = 'first' | 'easy' | 'medium' | 'hard';

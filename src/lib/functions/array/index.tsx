@@ -1,7 +1,7 @@
-import { Card, Difficulty } from 'src/lib/types';
+import { TypeCard, TypeDifficulty } from 'src/lib/types';
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-export function getShuffledArr(arr: Card[]): Card[] {
+export function getShuffledArr(arr: TypeCard[]): TypeCard[] {
   const newArr = [...arr];
   let currentIndex = newArr.length,
     randomIndex;
@@ -19,15 +19,15 @@ export function getShuffledArr(arr: Card[]): Card[] {
   return newArr;
 }
 
-export function addCard(card: Card, arr: Card[]): Card[] {
+export function addCard(card: TypeCard, arr: TypeCard[]): TypeCard[] {
   return [...arr, card];
 }
 
-export function removeCard(card: Card, arr: Card[]): Card[] {
+export function removeCard(card: TypeCard, arr: TypeCard[]): TypeCard[] {
   return arr.filter((item) => item.name !== card.name);
 }
 
-export function getRandomCards(arr: Card[], noCards: number): Card[] {
+export function getRandomCards(arr: TypeCard[], noCards: number): TypeCard[] {
   if (noCards > arr.length) throw Error('number of cards taken exceed array length');
   const poolArr = [...arr];
   const resultArr = [];
@@ -43,7 +43,7 @@ export function getRandomCards(arr: Card[], noCards: number): Card[] {
 
 // return a Card array with 5 random cards from leftOver and Chosen card, ratio depends on difficulty
 // easy: 4 - 1, medium: 3 - 2, hard: 1 - 4
-export function getPlayCards(difficulty: Difficulty, leftOver: Card[], chosen: Card[]): Card[] {
+export function getPlayCards(difficulty: TypeDifficulty, leftOver: TypeCard[], chosen: TypeCard[]): TypeCard[] {
   switch (difficulty) {
     case 'first':
       return [...getRandomCards(leftOver, 5)];
