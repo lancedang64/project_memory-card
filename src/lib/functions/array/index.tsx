@@ -26,3 +26,38 @@ export function addCard(card: Card, arr: Card[]): Card[] {
 export function removeCard(card: Card, arr: Card[]): Card[] {
   return arr.filter((item) => item.name !== card.name);
 }
+
+export function getRandomCards(arr: Card[], noCards: number): Card[] {
+  if (noCards > arr.length) throw Error('number of cards taken exceed array length');
+  const poolArr = [...arr];
+  const resultArr = [];
+  let randomIndex;
+
+  for (let i = 0; i < noCards; i++) {
+    randomIndex = Math.floor(Math.random() * poolArr.length);
+    resultArr.push(...poolArr.splice(randomIndex, 1));
+  }
+
+  return resultArr;
+}
+
+// return a Card array with 5 random cards from leftOver and Chosen card, ratio depends on difficulty
+// easy: 4 - 1, medium: 3 - 2, hard: 1 - 4
+export function getPlayCards(
+  difficulty: 'first' | 'easy' | 'medium' | 'hard',
+  leftOver: Card[],
+  chosen: Card[],
+): Card[] {
+  switch (difficulty) {
+    case 'first':
+      return [...getRandomCards(leftOver, 5)];
+    case 'easy':
+      return [...getRandomCards(leftOver, 4), ...getRandomCards(chosen, 1)];
+    case 'medium':
+      return [...getRandomCards(leftOver, 3), ...getRandomCards(chosen, 2)];
+    case 'hard':
+      return [...getRandomCards(leftOver, 1), ...getRandomCards(chosen, 4)];
+    default:
+      throw Error('Oops, something went wrong in getPlayCards()!');
+  }
+}
