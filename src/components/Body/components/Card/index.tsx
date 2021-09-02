@@ -9,14 +9,22 @@ const Container = styled.span`
   flex-direction: column;
   align-items: center;
   margin: 2% 1%;
-  background-color: chartreuse;
   padding: 15px;
+  background-color: #f4dd03;
+  border: solid;
+  border-radius: 20px;
+  box-shadow: 2px 2px;
 `;
 const Picture = styled.img`
   width: 150px;
   height: 150px;
+  border: inherit;
+  border-radius: inherit;
 `;
-const Name = styled.span``;
+const Name = styled.span`
+  margin-top: 15px;
+  font-weight: bold;
+`;
 
 function Card({ name, imgSrc, handleClick }: TypeCardComponent): ReactElement {
   return (

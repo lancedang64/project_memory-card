@@ -29,7 +29,7 @@ function CheatModeBox({ setIsInvincible, setIsDebugMode, isDebugMode, isInvincib
 
   return (
     <OnSide>
-      <p>Set Invincibility Mode</p>
+      <p>Set Invincibile Mode</p>
       <label className="switch">
         <input type="checkbox" checked={isInvincible} onChange={handleInvincible} />
         <span className="slider round"></span>
