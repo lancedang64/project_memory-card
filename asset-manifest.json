@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/lancedang64/project_memory-card/static/css/main.11619a2f.chunk.css",
+    "main.js": "/lancedang64/project_memory-card/static/js/main.8493daa7.chunk.js",
+    "main.js.map": "/lancedang64/project_memory-card/static/js/main.8493daa7.chunk.js.map",
+    "runtime-main.js": "/lancedang64/project_memory-card/static/js/runtime-main.4537ab92.js",
+    "runtime-main.js.map": "/lancedang64/project_memory-card/static/js/runtime-main.4537ab92.js.map",
+    "static/js/2.78e23df4.chunk.js": "/lancedang64/project_memory-card/static/js/2.78e23df4.chunk.js",
+    "static/js/2.78e23df4.chunk.js.map": "/lancedang64/project_memory-card/static/js/2.78e23df4.chunk.js.map",
+    "index.html": "/lancedang64/project_memory-card/index.html",
+    "static/css/main.11619a2f.chunk.css.map": "/lancedang64/project_memory-card/static/css/main.11619a2f.chunk.css.map",
+    "static/js/2.78e23df4.chunk.js.LICENSE.txt": "/lancedang64/project_memory-card/static/js/2.78e23df4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4537ab92.js",
+    "static/js/2.78e23df4.chunk.js",
+    "static/css/main.11619a2f.chunk.css",
+    "static/js/main.8493daa7.chunk.js"
+  ]
+}
