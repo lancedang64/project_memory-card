@@ -5,6 +5,8 @@ import { getDifficulty, getScore, isCardCorrect } from 'src/lib/functions/game-l
 import { CardEvent, TypeCard, TypeDifficulty } from 'src/lib/types';
 import styled from 'styled-components';
 import Card from './components/Card';
+import CheatModeBox from './components/CheatModeBox/CheatModeBox';
+import DebugBox from './components/DebugBox';
 import GameOverModal from './components/GameOverModal';
 import Instruction from './components/Instruction';
 import ScoreBoard from './components/ScoreBoard';
@@ -105,14 +107,10 @@ function Body(): ReactElement {
 
   return (
     <Container>
+      <CheatModeBox {...{ setIsDebugMode, setIsInvincible, isDebugMode, isInvincible }} />
       <TopPanel>
         <Instruction />
         <ScoreBoard {...{ round, score, highScore, difficulty }} />
-        {/* <div>
-            {leftOverCards.map((card) => (
-              <span key={card.name}>{card.name} </span>
-            ))}
-          </div> */}
       </TopPanel>
       <CardsContainer>
         {playCards.map((card) => (
@@ -131,6 +129,7 @@ function Body(): ReactElement {
             handleNewGame={handleNewGame}
           />
         )}
+        {isDebugMode && <DebugBox {...{ leftOverCards, chosenCards }} />}
       </CardsContainer>
     </Container>
   );

@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 interface MyProps {

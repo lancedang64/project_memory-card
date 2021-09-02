@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './reset.css';
-import './index.css';
+import './lib/styles/reset.css';
+import './lib/styles/index.css';
+import './lib/styles/switch.css';
 import App from './App';
 
 ReactDOM.render(
