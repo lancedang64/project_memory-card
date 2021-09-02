@@ -55,22 +55,24 @@ function Body(): ReactElement {
   const [isInvincible, setIsInvincible] = useState(false);
   const [isDebugMode, setIsDebugMode] = useState(false);
 
+  // set difficulty each round, if max round => setIsMaxScore and setIsGameOver
   useEffect(() => {
     setDifficulty(getDifficulty(round, maxRounds));
     if (round === maxRounds) {
-      setHighScore(score);
-      setIsMaxScore(true);
       setIsGameOver(true);
     }
   }, [round]);
 
+  // setPlayCards after every round
   useEffect(() => {
     const nextRoundCards = [...getPlayCards(difficulty, leftOverCards, chosenCards)];
     setPlayCards(getShuffledArr(nextRoundCards));
-  }, [round, difficulty]);
+  }, [round]);
 
+  // setScore if gameOver, setIsMaxScore if max round
   useEffect(() => {
     if (score > highScore) setHighScore(score);
+    if (round === maxRounds) setIsMaxScore(true);
   }, [isGameOver]);
 
   const handleCardClick = (event: CardEvent): void => {
@@ -122,9 +124,12 @@ function Body(): ReactElement {
           />
         ))}
         {isGameOver && (
-          <GameOverModal correct={chosenCards.length} leftOver={leftOverCards.length} isMaxScore={isMaxScore}>
-            <button onClick={handleNewGame}>New Game!</button>
-          </GameOverModal>
+          <GameOverModal
+            correct={chosenCards.length}
+            leftOver={leftOverCards.length}
+            isMaxScore={isMaxScore}
+            handleNewGame={handleNewGame}
+          />
         )}
       </CardsContainer>
     </Container>

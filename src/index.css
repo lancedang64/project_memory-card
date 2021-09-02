@@ -14,4 +14,9 @@ body {
 h2 {
   font-weight: bold;
   font-size: 22px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 5px;
 }
