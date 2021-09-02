@@ -1,20 +1,42 @@
 {
   "files": {
     "main.css": "/project_memory-card/static/css/main.11619a2f.chunk.css",
-    "main.js": "/project_memory-card/static/js/main.adceee11.chunk.js",
-    "main.js.map": "/project_memory-card/static/js/main.adceee11.chunk.js.map",
+    "main.js": "/project_memory-card/static/js/main.dbc262a1.chunk.js",
+    "main.js.map": "/project_memory-card/static/js/main.dbc262a1.chunk.js.map",
     "runtime-main.js": "/project_memory-card/static/js/runtime-main.a896ae38.js",
     "runtime-main.js.map": "/project_memory-card/static/js/runtime-main.a896ae38.js.map",
     "static/js/2.a9dc612e.chunk.js": "/project_memory-card/static/js/2.a9dc612e.chunk.js",
     "static/js/2.a9dc612e.chunk.js.map": "/project_memory-card/static/js/2.a9dc612e.chunk.js.map",
     "index.html": "/project_memory-card/index.html",
     "static/css/main.11619a2f.chunk.css.map": "/project_memory-card/static/css/main.11619a2f.chunk.css.map",
-    "static/js/2.a9dc612e.chunk.js.LICENSE.txt": "/project_memory-card/static/js/2.a9dc612e.chunk.js.LICENSE.txt"
+    "static/js/2.a9dc612e.chunk.js.LICENSE.txt": "/project_memory-card/static/js/2.a9dc612e.chunk.js.LICENSE.txt",
+    "static/media/All_Might_Approve.680750a0.png": "/project_memory-card/static/media/All_Might_Approve.680750a0.png",
+    "static/media/Denki_Kaminari_Portrait.74495ee9.png": "/project_memory-card/static/media/Denki_Kaminari_Portrait.74495ee9.png",
+    "static/media/Eijirou_Kirishima_Portrait.8c1fff17.png": "/project_memory-card/static/media/Eijirou_Kirishima_Portrait.8c1fff17.png",
+    "static/media/Fumikage_Tokoyami_Portrait.ba442145.png": "/project_memory-card/static/media/Fumikage_Tokoyami_Portrait.ba442145.png",
+    "static/media/Hanta_Sero_Portrait.c1ba1a4c.png": "/project_memory-card/static/media/Hanta_Sero_Portrait.c1ba1a4c.png",
+    "static/media/Izuku_Midoriya_Portrait.157fa7ad.png": "/project_memory-card/static/media/Izuku_Midoriya_Portrait.157fa7ad.png",
+    "static/media/Katsuki_Bakugo_Portrait.39c6f14f.png": "/project_memory-card/static/media/Katsuki_Bakugo_Portrait.39c6f14f.png",
+    "static/media/Kouji_Kouda_Portrait.6f1ffabb.png": "/project_memory-card/static/media/Kouji_Kouda_Portrait.6f1ffabb.png",
+    "static/media/Kyouka_Jirou_Portrait.c8299389.png": "/project_memory-card/static/media/Kyouka_Jirou_Portrait.c8299389.png",
+    "static/media/Mashirao_Ojiro_Portrait.93a044ed.png": "/project_memory-card/static/media/Mashirao_Ojiro_Portrait.93a044ed.png",
+    "static/media/Mezo_Shoji_Portrait.89caf3d5.png": "/project_memory-card/static/media/Mezo_Shoji_Portrait.89caf3d5.png",
+    "static/media/Mina_Ashido_Portrait.76a9500d.png": "/project_memory-card/static/media/Mina_Ashido_Portrait.76a9500d.png",
+    "static/media/Minoru_Mineta_Portrait.b76d53c1.png": "/project_memory-card/static/media/Minoru_Mineta_Portrait.b76d53c1.png",
+    "static/media/Momo_Yaoyorozu_Portrait.3ffd17ce.png": "/project_memory-card/static/media/Momo_Yaoyorozu_Portrait.3ffd17ce.png",
+    "static/media/My_Hero_Academia_Logo.1292fcc2.png": "/project_memory-card/static/media/My_Hero_Academia_Logo.1292fcc2.png",
+    "static/media/Ochaco_Uraraka_Portrait.eafd574e.png": "/project_memory-card/static/media/Ochaco_Uraraka_Portrait.eafd574e.png",
+    "static/media/Rikido_Sato_Portrait.3a50cd24.png": "/project_memory-card/static/media/Rikido_Sato_Portrait.3a50cd24.png",
+    "static/media/Shoto_Todoroki_Portrait.0ebb1314.png": "/project_memory-card/static/media/Shoto_Todoroki_Portrait.0ebb1314.png",
+    "static/media/Tenya_Iida_Portrait.25e4a3dc.png": "/project_memory-card/static/media/Tenya_Iida_Portrait.25e4a3dc.png",
+    "static/media/Tooru_Hagakure_Portrait.af13e829.png": "/project_memory-card/static/media/Tooru_Hagakure_Portrait.af13e829.png",
+    "static/media/Tsuyu_Asui_Portrait.e7d7da8e.png": "/project_memory-card/static/media/Tsuyu_Asui_Portrait.e7d7da8e.png",
+    "static/media/Yuuga_Aoyama_Portrait.06d3fa86.png": "/project_memory-card/static/media/Yuuga_Aoyama_Portrait.06d3fa86.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a896ae38.js",
     "static/js/2.a9dc612e.chunk.js",
     "static/css/main.11619a2f.chunk.css",
-    "static/js/main.adceee11.chunk.js"
+    "static/js/main.dbc262a1.chunk.js"
   ]
 }
