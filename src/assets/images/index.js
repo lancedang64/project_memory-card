@@ -19,8 +19,8 @@ import Tooru from './cards/Tooru_Hagakure_Portrait.png';
 import Tsuyu from './cards/Tsuyu_Asui_Portrait.png';
 import Yuuga from './cards/Yuuga_Aoyama_Portrait.png';
 
-import AllMight from './All_Might_Approve.png';
-import LogoMHA from './My_Hero_Academia_Logo.png';
+import AllMight from './other/All_Might_Approve.png';
+import LogoMHA from './other/My_Hero_Academia_Logo.png';
 
 export {
   Denki,
