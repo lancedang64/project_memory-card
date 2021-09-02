@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { AllMight } from 'src/assets/images';
 import styled from 'styled-components';
 
 interface MyProps {
@@ -30,11 +31,11 @@ const ButtonStyled = styled.button`
   padding: 10px 20px;
 `;
 
-const AllMight = styled.img`
+const AllMightIMG = styled.img`
   height: 200px;
 `;
 
-const AllMight2 = styled.img`
+const AllMightIMG2 = styled.img`
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   height: 200px;
@@ -60,14 +61,14 @@ function GameOverModal({ correct, leftOver, isMaxScore, handleNewGame }: TypePro
       <Container flexDirection={isMaxScore ? 'row' : 'column'}>
         {isMaxScore ? (
           <>
-            <AllMight src="../images/All_Might_Approve.png" />
+            <AllMightIMG src={AllMight} />
             <StyledDiv>
               <h2>Game Over!</h2>
               <h2>Plus Ultraaaa!!!! All Mights Approved!!</h2>
-              <p>Congratulations!!! You got everything right and achieved the maximum score!</p>
+              <p>CongratuIMGlations!!! You got everything right and achieved the maximum score!</p>
               <ButtonStyled onClick={handleNewGame}>New Game!</ButtonStyled>
             </StyledDiv>
-            <AllMight2 src="../images/All_Might_Approve.png" />
+            <AllMightIMG2 src={AllMight} />
           </>
         ) : (
           <>

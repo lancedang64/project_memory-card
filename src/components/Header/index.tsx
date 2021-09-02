@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { LogoMHA } from 'src/assets/images';
 import styled from 'styled-components';
 
 const Container = styled.header`
@@ -26,7 +27,7 @@ const H1 = styled.h1`
 function Header(): ReactElement {
   return (
     <Container>
-      <AnimeLogo src="../images/My_Hero_Academia_Logo.png" alt="My Hero Academia Logo" />
+      <AnimeLogo src={LogoMHA} alt="My Hero Academia Logo" />
       <H1>Memory Card Game</H1>
     </Container>
   );

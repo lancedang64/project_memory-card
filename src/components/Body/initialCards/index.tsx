@@ -1,82 +1,105 @@
+import {
+  Denki,
+  Eijirou,
+  Fumikage,
+  Hanta,
+  Izuku,
+  Katsuki,
+  Kouji,
+  Kyouka,
+  Mashirao,
+  Mezo,
+  Mina,
+  Minoru,
+  Momo,
+  Ochaco,
+  Rikido,
+  Shoto,
+  Tenya,
+  Tooru,
+  Tsuyu,
+  Yuuga,
+} from '../../../assets/images';
+
 export const initialCards = [
   {
     name: 'Denki Kaminari',
-    imgSrc: '../images/Denki_Kaminari_Portrait.png',
+    imgSrc: Denki,
   },
   {
     name: 'Eijirou Kirishima',
-    imgSrc: '../images/Eijirou_Kirishima_Portrait.png',
+    imgSrc: Eijirou,
   },
   {
     name: 'Fumikage Tokoyami',
-    imgSrc: '../images/Fumikage_Tokoyami_Portrait.png',
+    imgSrc: Fumikage,
   },
   {
     name: 'Hanta Sero',
-    imgSrc: '../images/Hanta_Sero_Portrait.png',
+    imgSrc: Hanta,
   },
   {
     name: 'Izuku Midoriya',
-    imgSrc: '../images/Izuku_Midoriya_Portrait.png',
+    imgSrc: Izuku,
   },
   {
     name: 'Katsuki Bakugo',
-    imgSrc: '../images/Katsuki_Bakugo_Portrait.png',
+    imgSrc: Katsuki,
   },
   {
     name: 'Kouji Kouda',
-    imgSrc: '../images/Kouji_Kouda_Portrait.png',
+    imgSrc: Kouji,
   },
   {
     name: 'Kyouka Jirou',
-    imgSrc: '../images/Kyouka_Jirou_Portrait.png',
+    imgSrc: Kyouka,
   },
   {
     name: 'Mashirao Ojiro',
-    imgSrc: '../images/Mashirao_Ojiro_Portrait.png',
+    imgSrc: Mashirao,
   },
   {
     name: 'Mezo Shoji',
-    imgSrc: '../images/Mezo_Shoji_Portrait.png',
+    imgSrc: Mezo,
   },
   {
     name: 'Mina Ashido',
-    imgSrc: '../images/Mina_Ashido_Portrait.png',
+    imgSrc: Mina,
   },
   {
     name: 'Minoru Mineta',
-    imgSrc: '../images/Minoru_Mineta_Portrait.png',
+    imgSrc: Minoru,
   },
   {
     name: 'Momo Yaoyorozu',
-    imgSrc: '../images/Momo_Yaoyorozu_Portrait.png',
+    imgSrc: Momo,
   },
   {
     name: 'Ochaco Uraraka',
-    imgSrc: '../images/Ochaco_Uraraka_Portrait.png',
+    imgSrc: Ochaco,
   },
   {
     name: 'Rikido Sato',
-    imgSrc: '../images/Rikido_Sato_Portrait.png',
+    imgSrc: Rikido,
   },
   {
     name: 'Shoto Todoroki',
-    imgSrc: '../images/Shoto_Todoroki_Portrait.png',
+    imgSrc: Shoto,
   },
   {
     name: 'Tenya Iida',
-    imgSrc: '../images/Tenya_Iida_Portrait.png',
+    imgSrc: Tenya,
   },
   {
     name: 'Tooru Hagakure',
-    imgSrc: '../images/Tooru_Hagakure_Portrait.png',
+    imgSrc: Tooru,
   },
   {
     name: 'Tsuyu Asui',
-    imgSrc: '../images/Tsuyu_Asui_Portrait.png',
+    imgSrc: Tsuyu,
   },
   {
     name: 'Yuuga Aoyama',
-    imgSrc: '../images/Yuuga_Aoyama_Portrait.png',
+    imgSrc: Yuuga,
   },
 ];
