@@ -17,4 +17,5 @@ Game rules:
 - Styled components, CSS
 - Design and plan
 
+A "Jira" board for the project
 ![project-memory-card-plan](https://user-images.githubusercontent.com/47963754/131842706-521ad732-2387-4b2e-85ee-023f2b0c4d01.png)
