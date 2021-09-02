@@ -1,5 +1,4 @@
 import React, { ReactElement, useState } from 'react';
-import { useMemo } from 'react';
 import { useEffect } from 'react';
 import { addCard, getPlayCards, getShuffledArr, removeCard } from 'src/lib/functions/array';
 import { getDifficulty, getScore, isCardCorrect } from 'src/lib/functions/game-logic';
@@ -49,7 +48,7 @@ const maxRounds = initialCards.length + 1;
 const firstRoundCards = getPlayCards('easy', initialCards, []);
 
 function Body(): ReactElement {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [leftOverCards, setLeftOverCards] = useState(initialCards);
   const [chosenCards, setChosenCards] = useState<TypeCard[]>([]);
   const [playCards, setPlayCards] = useState(firstRoundCards);
