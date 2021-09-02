@@ -9,6 +9,7 @@ const OnSide = styled.aside`
   padding: 10px;
   border: solid 2px black;
   box-shadow: 2px 2px black;
+  z-index: 2;
 `;
 
 interface TypeProps {

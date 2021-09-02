@@ -9,6 +9,7 @@ const DebugContainer = styled.aside`
   background-color: white;
   border: solid 2px black;
   padding: 10px;
+  z-index: 2;
 `;
 
 interface TypeProps {
