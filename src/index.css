@@ -10,3 +10,8 @@ body,
 body {
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+h2 {
+  font-weight: bold;
+  font-size: 22px;
+}

@@ -3,11 +3,10 @@ import React, { ReactElement } from 'react';
 function Instruction(): ReactElement {
   return (
     <div>
-      <h2>Instruction</h2>
+      <h2>How to Play</h2>
       <p>
-        The player is presented with a number of cards which have pictures and name. Every time the player click on a
-        card they have never clicked before, they gain 1 score point. If they pick the card that have been chosen
-        before, it is game over and the game restart. Try to get the max score!
+        Memorize and pick 1 character card each turn. Make sure that you do not ever pick a character that you have
+        picked before! Try to reach max score for a surprise!
       </p>
     </div>
   );

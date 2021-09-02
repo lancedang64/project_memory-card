@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Card from './components/Card';
 import GameOverModal from './components/GameOverModal';
 import Instruction from './components/Instruction';
+import ScoreBoard from './components/ScoreBoard';
 import { initialCards } from './initialCards';
 
 const Container = styled.section`
@@ -17,13 +18,16 @@ const Container = styled.section`
   grid-template-rows: 1fr 4fr;
 `;
 const TopPanel = styled.section`
-  text-align: center;
   background: radial-gradient(#db0917, #8b0912);
   color: white;
   border: solid 4px black;
-  padding: 15px 20%;
+  padding: 15px 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 `;
-const ScoreBoard = styled.div``;
 
 const CardsContainer = styled.section`
   display: flex;
@@ -48,6 +52,8 @@ function Body(): ReactElement {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [isMaxScore, setIsMaxScore] = useState(false);
+  const [isInvincible, setIsInvincible] = useState(false);
+  const [isDebugMode, setIsDebugMode] = useState(false);
 
   useEffect(() => {
     setDifficulty(getDifficulty(round, maxRounds));
@@ -82,7 +88,8 @@ function Body(): ReactElement {
   };
 
   const gameOver = (): void => {
-    // setIsGameOver(true);
+    if (isInvincible) return;
+    setIsGameOver(true);
   };
 
   const handleNewGame = (): void => {
@@ -98,17 +105,12 @@ function Body(): ReactElement {
     <Container>
       <TopPanel>
         <Instruction />
-        <ScoreBoard>
-          <span>Round: {round} </span>
-          <span>Score: {score} </span>
-          <span>Highscore: {highScore} </span>
-          <span>Difficulty: {difficulty}</span>
-          {/* <div>
+        <ScoreBoard {...{ round, score, highScore, difficulty }} />
+        {/* <div>
             {leftOverCards.map((card) => (
               <span key={card.name}>{card.name} </span>
             ))}
           </div> */}
-        </ScoreBoard>
       </TopPanel>
       <CardsContainer>
         {playCards.map((card) => (
