@@ -65,7 +65,7 @@ function GameOverModal({ correct, leftOver, isMaxScore, handleNewGame }: TypePro
             <StyledDiv>
               <h2>Game Over!</h2>
               <h2>Plus Ultraaaa!!!! All Mights Approved!!</h2>
-              <p>CongratuIMGlations!!! You got everything right and achieved the maximum score!</p>
+              <p>Congratulations!!! You got everything right and achieved the maximum score!</p>
               <ButtonStyled onClick={handleNewGame}>New Game!</ButtonStyled>
             </StyledDiv>
             <AllMightIMG2 src={AllMight} />
