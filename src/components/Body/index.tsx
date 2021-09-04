@@ -61,26 +61,6 @@ function Body(): ReactElement {
   const [isInvincible, setIsInvincible] = useState(false);
   const [isDebugMode, setIsDebugMode] = useState(false);
 
-  // set difficulty each round, if max round => setIsMaxScore and setIsGameOver
-  useEffect(() => {
-    setDifficulty(getDifficulty(round, maxRounds));
-    if (round === maxRounds) {
-      setIsGameOver(true);
-    }
-  }, [round]);
-
-  // setPlayCards after every round
-  useEffect(() => {
-    const nextRoundCards = [...getPlayCards(difficulty, leftOverCards, chosenCards)];
-    setPlayCards(getShuffledArr(nextRoundCards));
-  }, [round]);
-
-  // setScore if gameOver, setIsMaxScore if max round
-  useEffect(() => {
-    if (score > highScore) setHighScore(score);
-    if (round === maxRounds) setIsMaxScore(true);
-  }, [isGameOver]);
-
   const handleCardClick = (event: CardEvent): void => {
     const cardName = event.target.id;
     return isCardCorrect(cardName, leftOverCards) ? nextRound(cardName) : gameOver();
@@ -89,20 +69,32 @@ function Body(): ReactElement {
   const nextRound = (cardName: string): void => {
     const correctCard = leftOverCards.find((card) => card.name === cardName);
     if (!correctCard) throw Error('no card found!?');
-    setScore((prev) => prev + getScore(difficulty));
-    setLeftOverCards(removeCard(correctCard, leftOverCards));
-    setChosenCards(addCard(correctCard, chosenCards));
-    setRound((prevRound) => prevRound + 1);
+    setScore(score + getScore(difficulty));
+    const nextRoundLefOver = removeCard(correctCard, leftOverCards);
+    const nextRoundChosen = addCard(correctCard, chosenCards);
+    const nextRoundDifficulty = getDifficulty(round + 1, maxRounds);
+    const nextRoundCards = [...getPlayCards(nextRoundDifficulty, nextRoundLefOver, nextRoundChosen)];
+    setDifficulty(nextRoundDifficulty);
+    setLeftOverCards(nextRoundLefOver);
+    setChosenCards(nextRoundChosen);
+    setPlayCards(getShuffledArr(nextRoundCards));
+    setRound(round + 1);
+    if (round === maxRounds) {
+      setIsMaxScore(true);
+      setHighScore(score);
+      setIsGameOver(true);
+    }
   };
 
   const gameOver = (): void => {
-    if (isInvincible && isMaxScore === false) return;
+    if (score > highScore) setHighScore(score);
+    if (isInvincible && round !== maxRounds) return;
     setIsGameOver(true);
   };
 
   const handleNewGame = (): void => {
     setScore(0);
-    setRound(0);
+    setRound(1);
     setLeftOverCards(initialCards);
     setChosenCards([]);
     setPlayCards(firstRoundCards);
@@ -115,7 +107,7 @@ function Body(): ReactElement {
       <CheatModeBox {...{ setIsDebugMode, setIsInvincible, isDebugMode, isInvincible }} />
       <TopPanel>
         <Instruction />
-        <ScoreBoard {...{ round, score, highScore, difficulty }} />
+        <ScoreBoard {...{ round, maxRounds, score, highScore, difficulty }} />
       </TopPanel>
       <CardsContainer>
         {playCards.map((card) => (
@@ -134,7 +126,7 @@ function Body(): ReactElement {
             handleNewGame={handleNewGame}
           />
         )}
-        {isDebugMode && <DebugBox {...{ leftOverCards, chosenCards }} />}
+        {isDebugMode && <DebugBox {...{ leftOverCards, chosenCards, isGameOver, isMaxScore, maxRounds }} />}
       </CardsContainer>
     </Container>
   );

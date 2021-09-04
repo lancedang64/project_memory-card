@@ -15,9 +15,12 @@ const DebugContainer = styled.aside`
 interface TypeProps {
   leftOverCards: TypeCard[];
   chosenCards: TypeCard[];
+  isGameOver: boolean;
+  isMaxScore: boolean;
+  maxRounds: number;
 }
 
-function DebugBox({ leftOverCards, chosenCards }: TypeProps): ReactElement {
+function DebugBox({ leftOverCards, chosenCards, isGameOver, isMaxScore, maxRounds }: TypeProps): ReactElement {
   return (
     <DebugContainer>
       <div>
@@ -31,6 +34,12 @@ function DebugBox({ leftOverCards, chosenCards }: TypeProps): ReactElement {
         {chosenCards.map((card) => (
           <li key={card.name}>{card.name} </li>
         ))}
+      </div>
+      <div>
+        <h2>States</h2>
+        <li>isGameOver: {isGameOver.toString()}</li>
+        <li>isMaxScore: {isMaxScore.toString()}</li>
+        <li>maxRounds: {maxRounds}</li>
       </div>
     </DebugContainer>
   );

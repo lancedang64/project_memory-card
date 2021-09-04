@@ -10,6 +10,7 @@ const Stat = styled.span`
 
 interface TypeProps {
   round: number;
+  maxRounds: number;
   score: number;
   highScore: number;
   difficulty: TypeDifficulty;
@@ -18,7 +19,9 @@ interface TypeProps {
 function ScoreBoard(props: TypeProps): ReactElement {
   return (
     <div>
-      <Stat>Round: {props.round}</Stat>
+      <Stat>
+        Round: {props.round}/{props.maxRounds}
+      </Stat>
       <Stat>Difficulty: {props.difficulty}</Stat>
       <Stat>Score: {props.score}</Stat>
       <Stat>Highscore: {props.highScore}</Stat>
