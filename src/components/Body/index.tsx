@@ -1,5 +1,4 @@
 import React, { ReactElement, useState } from 'react';
-import { useEffect } from 'react';
 import { addCard, getPlayCards, getShuffledArr, removeCard } from 'src/lib/functions/array';
 import { getDifficulty, getScore, isCardCorrect } from 'src/lib/functions/game-logic';
 import { CardEvent, TypeCard, TypeDifficulty } from 'src/lib/types';

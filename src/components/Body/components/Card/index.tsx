@@ -2,8 +2,9 @@ import React from 'react';
 import { ReactElement } from 'react';
 import { TypeCardComponent } from 'src/lib/types';
 import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 
-const Container = styled.span`
+const Container = styled(animated.span)`
   @media (min-width: 320px) {
     padding: 5px;
   }
@@ -44,8 +45,10 @@ const Name = styled.span`
 `;
 
 function Card({ name, imgSrc, handleClick }: TypeCardComponent): ReactElement {
+  const cardAnimation = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } });
+
   return (
-    <Container>
+    <Container style={cardAnimation}>
       <Picture src={imgSrc} alt={name} onClick={handleClick} id={name}></Picture>
       <Name>{name}</Name>
     </Container>
