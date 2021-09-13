@@ -44,13 +44,11 @@ const CardsContainer = styled.section`
 `;
 
 const maxRounds = initialCards.length;
-const firstRoundCards = getPlayCards('easy', initialCards, []);
 
 function Body(): ReactElement {
   // const [isLoading, setIsLoading] = useState(true);
   const [leftOverCards, setLeftOverCards] = useState(initialCards);
   const [chosenCards, setChosenCards] = useState<TypeCard[]>([]);
-  const [playCards, setPlayCards] = useState(firstRoundCards);
   const [round, setRound] = useState(1);
   const [difficulty, setDifficulty] = useState<TypeDifficulty>('easy');
   const [isGameOver, setIsGameOver] = useState(false);
@@ -72,11 +70,9 @@ function Body(): ReactElement {
     const nextRoundLefOver = removeCard(correctCard, leftOverCards);
     const nextRoundChosen = addCard(correctCard, chosenCards);
     const nextRoundDifficulty = getDifficulty(round + 1, maxRounds);
-    const nextRoundCards = [...getPlayCards(nextRoundDifficulty, nextRoundLefOver, nextRoundChosen)];
     setDifficulty(nextRoundDifficulty);
     setLeftOverCards(nextRoundLefOver);
     setChosenCards(nextRoundChosen);
-    setPlayCards(getShuffledArr(nextRoundCards));
     setRound(round + 1);
     if (round === maxRounds) {
       setIsMaxScore(true);
@@ -96,10 +92,11 @@ function Body(): ReactElement {
     setRound(1);
     setLeftOverCards(initialCards);
     setChosenCards([]);
-    setPlayCards(firstRoundCards);
     setIsGameOver(false);
     setIsMaxScore(false);
   };
+
+  const playCards = getShuffledArr(getPlayCards(difficulty, leftOverCards, chosenCards));
 
   return (
     <Container>
