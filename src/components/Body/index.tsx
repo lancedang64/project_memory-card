@@ -109,7 +109,8 @@ function Body(): ReactElement {
         {playCards.map((card) => (
           <Card
             handleClick={isGameOver ? null : handleCardClick}
-            key={card.name}
+            // assigning random key so that all cards get remounted
+            key={Math.random()}
             name={card.name}
             imgSrc={card.imgSrc}
           />
